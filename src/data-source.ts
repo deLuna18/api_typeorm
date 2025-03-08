@@ -11,7 +11,7 @@ export const AppDataSource = new DataSource({
   username: 'root',
   password: 'root',
   database: 'node-mysql-crud-api',
-  synchronize: true,
+  synchronize: false,
   logging: true,
   entities: [User],
   migrations: [],

@@ -22,3 +22,5 @@ export const AppDataSource = new DataSource({
 AppDataSource.initialize()
   .then(() => console.log('Database connected and models synchronized.'))
   .catch((error) => console.error('Error connecting to the database:', error));
+
+  

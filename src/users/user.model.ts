@@ -111,14 +111,15 @@
 //   return User;
 // }
 
-// CONVERTING TO TS-TYPEORM
+// // Export the User model for use in services
+// export { User };
 import "reflect-metadata"; 
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity("Users")
 export class User {
   @PrimaryGeneratedColumn()
-  id!: number; 
+  id!: number;  // Use '!' to tell TypeScript it's initialized by TypeORM
 
   @Column({ unique: true })
   email!: string;
