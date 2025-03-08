@@ -1,6 +1,5 @@
 const bcrypt = require('bcryptjs');
 const db = require('_helpers/db');
-const { update } = require('lodash');
 
 module.exports = {
     getAll,

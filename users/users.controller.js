@@ -4,8 +4,6 @@ const Joi = require('joi');
 const validateRequest = require('_middleware/validate-request');
 const Role = require('_helpers/role');
 const userService = require('./user.service');
-const { update } = require('lodash');
-const { title } = require('process');
 
 //routes
 
@@ -18,12 +16,18 @@ router.delete('/:id', _delete);
 module.exports = router;
 
 // route functions
-
 function getAll(req, res, next){
     userService.getAll()
         .then(user => res.json(user))
         .catch(next);
 }
+
+function getById(req, res, next) {
+    userService.getById(req.params.id)
+        .then(user => res.json(user))
+        .catch(next);
+}
+
 
 function create(req, res, next){
     userService.create(req.body)
